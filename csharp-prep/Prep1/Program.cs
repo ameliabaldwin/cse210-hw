@@ -9,5 +9,8 @@ class Program
         Console.Write("What is your last name? ");
         string LastName = Console.ReadLine();
         Console.WriteLine($"Your name is {LastName}, {FirstName} {LastName}.");
+        DateTime theCurrentTime = DateTime.Now;
+        string dateText = theCurrentTime.ToShortDateString();
+        Console.WriteLine($"{dateText}");
     }
 }
