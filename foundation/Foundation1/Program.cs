@@ -59,11 +59,11 @@ class Program
 
         foreach (var video in videos)
         {
+            Console.WriteLine("");
             Console.WriteLine("Title: " + video.GetTitle());
             Console.WriteLine("Author: " + video.GetAuthor());
             Console.WriteLine("Time: " + video.GetLength() + " Seconds");
             Console.WriteLine("Comments: " + video.GetNumberOfComments());
-            Console.WriteLine("");
             foreach(var comment in video.GetComments())
             {
                 Console.WriteLine(comment.GetUsername() + ":" + comment.GetText());
