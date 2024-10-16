@@ -40,4 +40,5 @@ public class Activity
     {
         return $"{_title}\nDescription: {_description}\nDuration: {_duration} mins";
     }
+    
 }

@@ -30,19 +30,7 @@ class Program
         bool quit = false;
         while(quit != true)
         {
-            Console.WriteLine("--The Main Menus of Menu--\n");
-            l.Sleep(200);
-            Console.WriteLine("1. Breathing Activity: Will help you blow down your enemies\n");
-            l.Sleep(200);
-            Console.WriteLine("2. Reflection Activity: Will teach you how to use the reflection of the sun to burn holes through the earth\n");
-            l.Sleep(200);
-            Console.WriteLine("3. Listing Activity: Have too many girl or boy friends \nphone numbers then pick this one, it will help you list all of them\n");
-            l.Sleep(200);
-            Console.WriteLine("4. Quit: this quits and shuts down the program");
-            l.Sleep(200);
-            Console.WriteLine("**DISCLAIMER: WE CAN'T PROMISE THAT ANY OF THESE THINGS WILL ACTUALLY DO WHAT THEY SAY AND THEY MIGHT CAUSE IREVERSABLE DAMAGE TO YOUR FUNKY SOUL**\n");
-            l.Sleep(200);
-            Console.Write($"okay let's keep this train going, {newNames} pick one of these options...:");
+            l.menu(newNames);
             string activity = Console.ReadLine();
             l.Sleep(200);
 
@@ -53,19 +41,15 @@ class Program
             {
                 string message1 = "Breathe in...";
                 string message2 = "Breathe out...";
+                
                 Console.WriteLine("How Long are you gonna do this for(seconds): ");
+                
                 int timeLength = int.Parse(Console.ReadLine());
+                
                 Breathing br = new Breathing(message1, message2, "Breathing Activity", "This activity will help you clear your mind for more stress", timeLength, timeLength);
                 Console.WriteLine(br.GetActivityDetails());
-                for (int i = 5; i>0; i--)
-                {
-                    Console.SetCursorPosition(0, Console.CursorTop);
-                    Console.Write($"Beginning in...{i}");
-                    l.Sleep(2000);
-                }
-                Console.SetCursorPosition(0, Console.CursorTop);
-                Console.Clear();
-                Console.WriteLine("\n--Starting now!--"); 
+
+                l.countdown();
 
                 int totalDurationInMillis = br.GetDurationInMilSecs(); // total duration is 1 minute (60,000 ms)
                 int elapsedTime = 0;
@@ -104,19 +88,14 @@ class Program
 
                 string[] thinkPrompts = "Think of a time when you stood up for someone else.|Think of a time when you did something really difficult.|Think of a time when you helped someone in need.|Think of a time when you did something truly selfless.".Split('|');
                 string[] questionPrompts = "Why was this experience meaningful to you?|Have you ever done anything like this before?|How did you get started?|How did you feel when it was complete?|What made this time different than other times when you were not as successful?|What is your favorite thing about this experience?|What could you learn from this experience that applies to other situations?|What did you learn about yourself through this experience?|How can you keep this experience in mind in the future?".Split('|');
+                
                 Console.WriteLine("How Long are you gonna do this for(seconds): ");
                 int timeLength = int.Parse(Console.ReadLine());
+                
                 Reflection rf = new Reflection(questionPrompts, thinkPrompts, "Reflection Activity", "This activity will help you remember your dark past and happy memories", timeLength, timeLength);
                 Console.WriteLine(rf.GetActivityDetails());
-                for (int i = 5; i>0; i--)
-                {
-                    Console.SetCursorPosition(0, Console.CursorTop);
-                    Console.Write($"Beginning in...{i}");
-                    l.Sleep(2000);
-                }
-                Console.SetCursorPosition(0, Console.CursorTop);
-                Console.Clear();
-                Console.WriteLine("\n--Starting now!--"); 
+                
+                l.countdown();
 
                 int totalDurationInMillis = rf.GetDurationInMilSecs();
                 int elapsedTime = 0;
@@ -156,19 +135,15 @@ class Program
             if (activity == "3")
             {
                 string[] listPrompts = "Who are people that you appreciate?|What are personal strengths of yours?|Who are people that you have helped this week?|When have you felt the Holy Ghost this month?|Who are some of your personal heroes?".Split('|');
+                
                 Console.WriteLine("How Long are you gonna do this for(seconds): ");
                 int timeLength = int.Parse(Console.ReadLine());
+                
                 Listing li = new Listing(listPrompts, "Listing Activity", "This activity will help you list all your fears and desires for real, no cap", timeLength, timeLength);
                 Console.WriteLine(li.GetActivityDetails());
-                for (int i = 5; i>0; i--)
-                {
-                    Console.SetCursorPosition(0, Console.CursorTop);
-                    Console.Write($"Beginning in...{i}");
-                    l.Sleep(2000);
-                }
-                Console.SetCursorPosition(0, Console.CursorTop);
-                Console.Clear();
-                Console.WriteLine("\n--Starting now!--"); 
+                
+                l.countdown();
+                
                 int totalDurationInMillis = li.GetDurationInMilSecs();
                 int elapsedTime = 0;
 
