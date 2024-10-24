@@ -1,9 +1,16 @@
 using System;
 
-class Program
+namespace GoalTrackingApp
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello Develop06 World!");
+        static void Main(string[] args)
+        {
+            // Initialize the GoalManager
+            GoalManager goalManager = new GoalManager();
+
+            // Start the GoalManager
+            goalManager.Start();
+        }
     }
 }
